@@ -1,2 +1,15 @@
-# Meet-Sports
-A web application for people to meet up and playing sports together!
+# umi project
+
+## Getting Started
+
+Install dependencies,
+
+```bash
+$ yarn
+```
+
+Start the dev server,
+
+```bash
+$ yarn start
+```
