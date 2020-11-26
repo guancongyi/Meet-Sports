@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './index.less'
 
-export default () => {
+const HomePage = () => {
     return (
-        <div>
-            <h1 className={styles.title}>Home Page</h1>
-        </div>
+        <div className={styles.title}>Home Page</div>
     )
 }
+
+export default HomePage
 
