@@ -1,9 +1,13 @@
 import React from 'react';
-import styles from './index.less'
+import { Layout } from 'antd';
+import BigHeader from './bigHeader';
 
 const HomePage = () => {
     return (
-        <div className={styles.title}>Home Page</div>
+        <Layout>
+            <BigHeader></BigHeader>
+            <div>other contents</div>
+        </Layout>
     )
 }
 
