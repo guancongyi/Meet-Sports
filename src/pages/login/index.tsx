@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'umi';
 import { Button, Form, Input, Row, Col, Card, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
@@ -8,9 +9,9 @@ interface LoginPayload {
   remember: Boolean;
 }
 
-const LoginPage: React.FC = () => {
+const LoginPage: React.FC = ({ dispatch }) => {
   const onFinish = (values: LoginPayload) => {
-    console.log(values)
+    dispatch({ type: 'user/login', payload: values })
   }
   return (
     <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
@@ -41,4 +42,6 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default connect(({ user }) => ({
+  user
+}))(LoginPage);
