@@ -12,14 +12,14 @@ public class UserLoginResponse extends AbstractResponse {
 
     private Long id;
     private String username;
-    private String phone;
+    private String name;
     private String email;
-    private String sex;
-    private String address;
-    private String file;
-    private String description;
-    private Integer points;
-    private Long balance;
-    private int state;
-    private String token;
+//    private String sex;
+//    private String address;
+    private String icon;
+//    private String description;
+//    private Integer points;
+//    private Long balance;
+//    private int state;
+//    private String token;
 }
