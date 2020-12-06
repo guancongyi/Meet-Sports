@@ -26,27 +26,12 @@ public class User {
     private String name;
 
 
-
-//    /**
-//     * 注册手机号
-//     */
-//    private String phone;
-
     /**
      * 注册邮箱
      */
     private String email;
 
     private String sex;
-
-//    private String address;
-
-//    private Integer state;
-
-//    private String description;
-
-//    @Column(name = "role_id")
-//    private Integer roleId;
 
     /**
      * 头像

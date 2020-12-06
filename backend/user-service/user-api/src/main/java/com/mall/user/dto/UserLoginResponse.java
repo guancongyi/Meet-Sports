@@ -14,12 +14,6 @@ public class UserLoginResponse extends AbstractResponse {
     private String username;
     private String name;
     private String email;
-//    private String sex;
-//    private String address;
+    private String sex;
     private String icon;
-//    private String description;
-//    private Integer points;
-//    private Long balance;
-//    private int state;
-//    private String token;
 }
