@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { Button, Form, Input, Row, Col, Card } from 'antd';
-import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
+import { Button, Form, Input, Row, Col, Card, Radio } from 'antd';
+import { UserOutlined, LockOutlined, MailOutlined, SmileOutlined } from '@ant-design/icons';
 
 interface RegisterPayload {
   username: String;
   password: String;
-  remember: Boolean;
 }
 const RegisterPage: React.FC = () => {
   const onFinish = (values: RegisterPayload) => {
@@ -14,7 +13,7 @@ const RegisterPage: React.FC = () => {
   return (
     <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
       <Col>
-        <Card title="Welcome" headStyle={{ textAlign: 'center' }} style={{ width: '300px'}}>
+        <Card title="Welcome" headStyle={{ textAlign: 'center' }} style={{ width: '300px' }}>
           <Form onFinish={onFinish}>
             <Form.Item name="username" rules={[{ required: true }]}>
               <Input prefix={<UserOutlined />} placeholder="Username" />
@@ -22,7 +21,7 @@ const RegisterPage: React.FC = () => {
             <Form.Item name="password" hasFeedback rules={[{ required: true }]}>
               <Input.Password prefix={<LockOutlined />} placeholder="Password" />
             </Form.Item>
-            <Form.Item name="rePassword" hasFeedback dependencies={['password']}  rules={[
+            <Form.Item name="rePassword" hasFeedback dependencies={['password']} rules={[
               { required: true },
               ({ getFieldValue }) => ({
                 validator(rule, value) {
@@ -37,6 +36,15 @@ const RegisterPage: React.FC = () => {
             </Form.Item>
             <Form.Item name="email" hasFeedback rules={[{ type: 'email' }, { required: true }]} >
               <Input prefix={<MailOutlined />} placeholder="Email" />
+            </Form.Item>
+            <Form.Item name="name" rules={[{ required: true }]}>
+              <Input prefix={<SmileOutlined />} placeholder="A Name on your Profile :)" />
+            </Form.Item>
+            <Form.Item name="sex" hasFeedback rules={[{ required: true }]}>
+              <Radio.Group >
+                <Radio value='M'>Male</Radio>
+                <Radio value='F'>Female</Radio>
+              </Radio.Group>
             </Form.Item>
             <Button htmlType="submit" type="primary" style={{ 'width': '100%' }}
             >Register</Button>

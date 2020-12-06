@@ -1,5 +1,7 @@
 import { userLogin } from '@/services/user';
 import { Effect, Reducer } from 'umi';
+import {message} from 'antd'
+
 interface CurrentUser {
     name?: string;
     icon?: string;
@@ -38,8 +40,12 @@ const UserModel: UserModelType = {
     effects: {
         *login({ payload }, { call, put }) {
             const resp = yield call(userLogin, payload)
-            yield put({type: 'saveUser', payload: {currentUser: {...resp}}})
-            
+            console.log(resp);
+            if (resp.data.status === 1){
+                yield put({type: 'saveUser', payload: {currentUser: {...resp}}})
+            }else{
+                message.error(resp.data.msg)
+            }
         }
     },
     reducers: {

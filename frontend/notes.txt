@@ -1,3 +1,0 @@
-/login 
-failed {"code": "003001", "msg": "用户名密码不正确"}
-success {"code": "000000", "msg": "用户名密码不正确", "email": "xxx", "name": "xxx", "username": "xxx", "user_id": "1"}
