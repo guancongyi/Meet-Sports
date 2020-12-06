@@ -23,10 +23,8 @@ public class User {
      */
     private String password;
 
-    /**
-     * 注册手机号
-     */
-    private String phone;
+    private String name;
+
 
     /**
      * 注册邮箱
@@ -35,23 +33,18 @@ public class User {
 
     private String sex;
 
-    private String address;
-
-    private Integer state;
-
-    private String description;
-
-    @Column(name = "role_id")
-    private Integer roleId;
-
     /**
      * 头像
      */
-    private String file;
+    private String icon;
 
-    private Date created;
+    private Date created_at;
 
-    private Date updated;
+    private Date updated_at;
+
+    private float longitude;
+
+    private float latitude;
 
 
 }

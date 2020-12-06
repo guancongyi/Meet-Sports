@@ -14,11 +14,11 @@ import org.apache.commons.lang3.StringUtils;
 @Data
 public class UserLoginRequest extends AbstractRequest {
     private String userName;
-    private String password;
+    private String userPwd;
 
     @Override
     public void requestCheck() {
-        if(StringUtils.isBlank(userName)||StringUtils.isBlank(password)){
+        if(StringUtils.isBlank(userName)||StringUtils.isBlank(userPwd)){
             throw new ValidateException(
                     SysRetCodeConstants.REQUEST_CHECK_FAILURE.getCode(),
                     SysRetCodeConstants.REQUEST_CHECK_FAILURE.getMessage());
