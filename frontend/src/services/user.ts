@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {message} from 'antd'
 
 interface LoginParams {
     username: string,
@@ -10,7 +11,7 @@ async function userLogin(params: LoginParams){
     if (resp.data.status === 1){
         return resp.data;
     }else{
-        alert(resp.data.message)
+        message.error(resp.data.msg)
     }
 }
 

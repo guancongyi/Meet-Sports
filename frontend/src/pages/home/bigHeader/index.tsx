@@ -28,8 +28,8 @@ const BigHeader: React.FunctionComponent<IBigHeaderProps> = (props) => {
                 ghost={false}
                 tags={<Tag color="blue">Beta 1</Tag>}
                 extra={[
-                    <Button size='large' shape='round' type="primary" onClick={()=>history.push('/login')}> Log in</Button>,
-                    <Button size='large' shape='round' onClick={()=>history.push('/welcome')}>Sign up</Button>
+                    <Button key='1' size='large' shape='round' type="primary" onClick={()=>history.push('/login')}> Log in</Button>,
+                    <Button key='2' size='large' shape='round' onClick={()=>history.push('/welcome')}>Sign up</Button>
                 ]}
             >
             </PageHeader>
