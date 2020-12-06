@@ -9,4 +9,8 @@ async function userLogin(params: LoginParams){
     return await axios.post('/login', params);
 }
 
-export { userLogin };
+async function userRegister(params){
+    return await axios.post('/welcome', params);
+}
+
+export { userLogin, userRegister };
