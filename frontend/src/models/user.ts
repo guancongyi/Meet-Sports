@@ -38,8 +38,8 @@ const UserModel: UserModelType = {
     effects: {
         *login({ payload }, { call, put }) {
             const resp = yield call(userLogin, payload)
-            console.log(resp);
             yield put({type: 'saveUser', payload: {currentUser: {...resp}}})
+            
         }
     },
     reducers: {

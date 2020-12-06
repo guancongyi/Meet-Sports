@@ -10,11 +10,12 @@ export default {
                 name: 'gcy',
                 icon: 'https://tva1.sinaimg.cn/large/00831rSTly1gdm7eok2oij301s01sgli.jpg',
                 userId: 1,
+                msg: 'Success'
             })
         }else{
             res.send({
                 status: 0,
-                message: 'User does not exists!'
+                msg: 'User does not exists!'
             })
         }
     }

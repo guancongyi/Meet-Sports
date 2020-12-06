@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'umi';
+import { useDispatch, useSelector, useHistory } from 'umi';
 import { Button, Form, Input, Row, Col, Card, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
@@ -8,11 +8,18 @@ interface LoginPayload {
   password: String;
   remember: Boolean;
 }
+const LoginPage: React.FC = () => {
+  const currentUser = useSelector(state => state.user.currentUser);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-const LoginPage: React.FC = ({ dispatch }) => {
   const onFinish = (values: LoginPayload) => {
     dispatch({ type: 'user/login', payload: values })
+    if (Object.keys(currentUser).length !== 0 ){
+      history.push('/')
+    }
   }
+
   return (
     <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>
       <Col>
@@ -42,6 +49,4 @@ const LoginPage: React.FC = ({ dispatch }) => {
   );
 };
 
-export default connect(({ user }) => ({
-  user
-}))(LoginPage);
+export default LoginPage;
