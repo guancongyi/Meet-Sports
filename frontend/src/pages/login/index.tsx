@@ -15,10 +15,13 @@ const LoginPage: React.FC = () => {
 
   const onFinish = (values: LoginPayload) => {
     dispatch({ type: 'user/login', payload: values })
-    if (Object.keys(currentUser).length !== 0 ){
+  }
+
+  useEffect(()=>{
+    if (Object.keys(currentUser).length > 0) {
       history.push('/')
     }
-  }
+  }, [currentUser])
 
   return (
     <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>

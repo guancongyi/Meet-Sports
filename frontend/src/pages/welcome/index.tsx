@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useDispatch, useSelector, useHistory } from 'umi';
 import { Button, Form, Input, Row, Col, Card } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 
@@ -8,7 +9,10 @@ interface RegisterPayload {
   remember: Boolean;
 }
 const RegisterPage: React.FC = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const onFinish = (values: RegisterPayload) => {
+    dispatch({type: 'user/register', payload: values})
     console.log(values)
   }
   return (
