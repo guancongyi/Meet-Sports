@@ -1,14 +1,27 @@
 import * as React from 'react';
-import { Button, Form, Input, Row, Col, Card, Radio } from 'antd';
+import { useHistory } from 'umi';
+import { userRegister } from '@/services/user';
+import { Button, Form, Input, Row, Col, Card, Radio, message } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined, SmileOutlined } from '@ant-design/icons';
+
 
 interface RegisterPayload {
   username: String;
   password: String;
 }
 const RegisterPage: React.FC = () => {
+  const history = useHistory();
+
   const onFinish = (values: RegisterPayload) => {
     console.log(values)
+    userRegister(values).then((resp) => {
+      if (resp.data.code === 200) {
+        message.success(resp.data.message)
+        history.push('/login')
+      } else {
+        message.error(resp.data.message)
+      }
+    })
   }
   return (
     <Row justify="center" align="middle" style={{ minHeight: '100vh' }}>

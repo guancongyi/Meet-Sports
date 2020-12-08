@@ -17,7 +17,7 @@ const LoginPage: React.FC = () => {
     dispatch({ type: 'user/login', payload: values })
   }
 
-  useEffect(() => {
+  useEffect(() => {    
     if (Object.keys(currentUser).length > 0) {
       history.push('/')
     }
