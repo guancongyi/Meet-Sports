@@ -1,0 +1,12 @@
+
+.top-container{
+    background-image: url("../../static/background.jpg");
+    height: 70vh;
+    position: relative;
+}
+.selection-container{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
