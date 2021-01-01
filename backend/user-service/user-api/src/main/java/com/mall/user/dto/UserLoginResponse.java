@@ -4,7 +4,7 @@ import com.mall.commons.result.AbstractResponse;
 import lombok.Data;
 
 /**
- *  ciggar
+ * oldchicken
  * create-date: 2019/7/22-13:10
  */
 @Data

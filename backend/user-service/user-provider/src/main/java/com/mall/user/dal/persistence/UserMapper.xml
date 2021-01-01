@@ -12,6 +12,7 @@
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="created_at" jdbcType="TIMESTAMP" property="created_at" />
     <result column="updated_at" jdbcType="TIMESTAMP" property="updated_at" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="icon" jdbcType="VARCHAR" property="file" />
     <result column="longitude" jdbcType="FLOAT" property="longitude" />
     <result column="latitude" jdbcType="FLOAT" property="latitude" />
@@ -19,7 +20,7 @@
   
   <sql id="BaseColumns">
     <!-- WARNING - @mbg.generated -->
-    id, username, password, name, email, created_at, updated_at, icon, longitude, latitude
+    id, username, password, name, email, created_at, updated_at, sex, icon, longitude, latitude
   </sql>
   
 </mapper>

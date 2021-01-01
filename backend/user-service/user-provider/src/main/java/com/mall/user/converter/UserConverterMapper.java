@@ -8,13 +8,11 @@ import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 /**
- *  ciggar
+ *  oldchicken
  * create-date: 2019/7/22-18:05
  */
 @Mapper(componentModel = "spring")
 public interface UserConverterMapper {
-
-    UserConverterMapper INSTANCE= Mappers.getMapper(UserConverterMapper.class);
 
     @Mappings({})
     UserLoginResponse loginConverter(User user);
