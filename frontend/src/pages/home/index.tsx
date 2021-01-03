@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '@/components/header';
 import { Input, Button, Select, Row } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+// import { Map, APILoader } from '@uiw/react-baidu-map';
 
 const { Option } = Select;
 
@@ -28,14 +29,23 @@ const SelectionBox = () => {
 }
 
 const HomePage = () => {
-    
     return (
         <div>
             <div className={'top-container'}>
-                <Header/>
-                <SelectionBox/>
+                <Header />
+                <SelectionBox />
             </div>
-            <div>Events</div>
+            <div className={'bottom-container'}>
+                <div>Event</div>
+                <div>
+                    <div style={{ width: '50%', height: '100vh' }}>
+                        {/* <APILoader akay="GTrnXa5hwXGwgQnTBG28SHBubErMKm3f">
+                            <Map />
+                        </APILoader> */}
+                    </div>
+                </div>
+
+            </div>
         </div>
     )
 }
