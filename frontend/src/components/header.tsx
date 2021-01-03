@@ -1,13 +1,13 @@
 import './header.css'
 import icon from '../../src/static/icon.png';
-import * as React from 'react';
-import { PageHeader, Button, Tag, Row, Image, Space } from 'antd';
-import { history } from 'umi';
+import React, { useState, useEffect } from 'react';
+import { Avatar, Button, Tag, Row, Image, Space } from 'antd';
+import { history, useSelector } from 'umi';
 
 interface IHeaderProps {
 }
 
-const ButtonGroup = (props) => {
+const ButtonGroup = () => {
     return (
         <div className={'btns'}>
             <Space>
@@ -18,7 +18,20 @@ const ButtonGroup = (props) => {
     )
 }
 
-const Header: React.FC<IHeaderProps> = (props) => {
+const UserIcon = ({iconSrc}) => {
+    return (
+        <div className={'icon'} onClick={(e)=>{
+            console.log('logout');
+            
+        }}>
+            <Avatar size={50} src={iconSrc} />
+        </div>
+    )
+}
+
+const Header: React.FC<IHeaderProps> = () => {
+    let currUser = useSelector(state => state.user.currentUser);
+
     return (
         <div className={'header-container'}  >
             <Image
@@ -26,7 +39,11 @@ const Header: React.FC<IHeaderProps> = (props) => {
                 width={100}
                 src={icon}
             />
-            <ButtonGroup />
+            {
+                <UserIcon iconSrc={'https://tva1.sinaimg.cn/large/00831rSTly1gdm7eok2oij301s01sgli.jpg'}/>
+                // Object.keys(currUser).length > 0 ?
+                //     <UserIcon iconSrc={currUser['icon']}/> : <ButtonGroup />
+            }
         </div>
     );
 };
